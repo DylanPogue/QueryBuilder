@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QueryBuilder.Models
 {
-    internal interface IClassModel
+    public interface IClassModel
     {
         public int Id { get; set; }
     }

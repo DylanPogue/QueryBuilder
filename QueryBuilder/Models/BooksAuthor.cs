@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QueryBuilder.Models
 {
-    public class BooksAuthor
+    public class BooksAuthor : IClassModel
     {
         public int Id { get; set; }
         public int AuthorId { get; set; }

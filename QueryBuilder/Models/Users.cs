@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QueryBuilder.Models
 {
-    public class Users
+    public class Users : IClassModel
     {
         public int Id { get; set; }
         public string UserName { get; set; }
