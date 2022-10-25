@@ -9,5 +9,7 @@ namespace QueryBuilder.Models
     public class Books
     {
         public int Id { get; set; }
+        public string Title { get; set; }
+        public int Isbn { get; set; }
     }
 }
