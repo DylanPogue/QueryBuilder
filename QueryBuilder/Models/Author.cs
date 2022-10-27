@@ -18,5 +18,10 @@ namespace QueryBuilder.Models
             FirstName = firstName;
             Surname = surname;
         }
+
+        public Author()
+        {
+
+        }
     }
 }

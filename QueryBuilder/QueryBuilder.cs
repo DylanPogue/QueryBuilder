@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.Data.Sqlite;
 using QueryBuilder.Models;
 
-namespace QueryBuilder.Models
+namespace QueryBuilder
 {
     public class QueryBuilder : IDisposable
     {
