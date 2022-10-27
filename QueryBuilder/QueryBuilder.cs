@@ -53,6 +53,8 @@ namespace QueryBuilder.Models
             return datas;
         }
 
+ 
+
         //Create
         public void Create<T>(T obj)
         {

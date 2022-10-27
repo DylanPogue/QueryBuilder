@@ -10,5 +10,11 @@ namespace QueryBuilder.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        public Categories(int id, string name)
+        {
+            Id = id;
+            Name = name;
+        }
     }
 }

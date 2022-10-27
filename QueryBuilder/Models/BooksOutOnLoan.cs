@@ -11,5 +11,12 @@ namespace QueryBuilder.Models
         public int Id { get; set; }
         public int BookId { get; set; }
         public int UserId { get; set; }
+
+        public BooksOutOnLoan(int id, int bookId, int userId)
+        {
+            Id = id;
+            BookId = bookId;
+            UserId = userId;
+        }
     }
 }

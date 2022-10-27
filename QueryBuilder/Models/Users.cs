@@ -15,5 +15,16 @@ namespace QueryBuilder.Models
         public decimal AmountOfFine { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
+
+        public Users(int id, string userName, string userAddress, string otherUserDetails, decimal amountOfFine, string email, string phoneNumber)
+        {
+            Id = id;
+            UserName = userName;
+            UserAddress = userAddress;
+            OtherUserDetails = otherUserDetails;
+            AmountOfFine = amountOfFine;
+            Email = email;
+            PhoneNumber = phoneNumber;
+        }
     }
 }

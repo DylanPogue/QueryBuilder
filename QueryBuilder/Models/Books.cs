@@ -11,5 +11,12 @@ namespace QueryBuilder.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public int Isbn { get; set; }
+
+        public Books(int id, string title, int isbn)
+        {
+            Id = id;
+            Title = title;
+            Isbn = isbn;
+        }
     }
 }
