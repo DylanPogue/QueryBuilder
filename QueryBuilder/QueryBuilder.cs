@@ -54,14 +54,24 @@ namespace QueryBuilder
             return datas;
         }
 
-        /*public T Read<T>(int id) where T : IClassModel, new()
+        public T Read<T>(int id) where T : IClassModel, new()
         {
             var command = connection.CreateCommand();
-            command.CommandText = $"SELECT * FROM {typeof(T).Name}";
+            command.CommandText = $"SELECT * FROM {typeof(T).Name} WHERE Id = {id}";
             var reader = command.ExecuteReader();
-            T data;
-            
-        }*/
+            T data = new T();
+            if (reader.Read())
+            {
+                for (int i = 0; i < reader.FieldCount; i++)
+                {
+                    if (typeof(T).GetProperty(reader.GetName(i)).PropertyType == typeof(int))
+                        typeof(T).GetProperty(reader.GetName(i)).SetValue(data, Convert.ToInt32(reader.GetValue(i)));
+                    else
+                        typeof(T).GetProperty(reader.GetName(i)).SetValue(data, reader.GetValue(i));
+                }
+            }
+            return data;
+        }
 
         //Create
         public void Create<T>(T obj)

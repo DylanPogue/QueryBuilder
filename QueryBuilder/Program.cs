@@ -43,4 +43,11 @@ using (var qb = new QueryBuilder.QueryBuilder(database))
     {
         Console.WriteLine(a);
     }
+
+    Console.WriteLine("If you would like to see a specific author hit enter!");
+    Console.ReadLine();
+    var specificAuthor = qb.Read<Author>(1);
+    Console.WriteLine($"{specificAuthor}");
+
+
 }
