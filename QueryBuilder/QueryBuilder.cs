@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -108,7 +109,7 @@ namespace QueryBuilder
         }
 
         //Update
-        public void Update<T>(T obj)
+        public void Update<T>(T obj) where T : IClassModel
         {
             PropertyInfo[] properties = typeof(T).GetProperties();
 
@@ -134,18 +135,17 @@ namespace QueryBuilder
             {
                 if (i == values.Count - 1)
                 {
-                    sbValues.Append($"{values[i]}");
-                    sbNames.Append($"{names[i]}");
+                    sbValues.Append($"{properties[i].Name} = {values[i]}");
                 }
                 else
                 {
-                    sbValues.Append($"{values[i]}, ");
-                    sbNames.Append($"{names[i]}, ");
+                    sbValues.Append($"{properties[i].Name} = {values[i]}, ");
                 }
             }
 
             var command = connection.CreateCommand();
-            command.CommandText = $"UPDATE {typeof(T).Name} SET Id = ({sbValues[1]}), SET FirstName = ({sbValues[2]}), SET Surname = ({sbValues[3]})";
+           
+            command.CommandText = $"UPDATE {typeof(T).Name} SET ({sbValues}) WHERE Id = {obj.Id}";
 
             var update = command.ExecuteNonQuery();
 
