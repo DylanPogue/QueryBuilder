@@ -9,6 +9,7 @@ List<Author> authors;
 using (var qb = new QueryBuilder.QueryBuilder(database))
 {
     Console.WriteLine($"If you would like to create a second author hit enter...");
+    Console.ReadLine();
     var sk = new Author(77, "Lucky", "Duck");
     qb.Create<Author>(sk);
 
