@@ -129,7 +129,6 @@ namespace QueryBuilder
             }
 
             StringBuilder sbValues = new StringBuilder();
-            StringBuilder sbNames = new StringBuilder();
 
             for (int i = 0; i < values.Count; i++)
             {
@@ -145,7 +144,7 @@ namespace QueryBuilder
 
             var command = connection.CreateCommand();
            
-            command.CommandText = $"UPDATE {typeof(T).Name} SET ({sbValues}) WHERE Id = {obj.Id}";
+            command.CommandText = $"UPDATE {typeof(T).Name} SET {sbValues} WHERE Id = {obj.Id}";
 
             var update = command.ExecuteNonQuery();
 
