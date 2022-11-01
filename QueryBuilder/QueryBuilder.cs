@@ -145,7 +145,7 @@ namespace QueryBuilder
             }
 
             var command = connection.CreateCommand();
-            command.CommandText = $"UPDATE {typeof(T).Name} ({sbNames}) Values ({sbValues})";
+            command.CommandText = $"UPDATE {typeof(T).Name} SET Id = ({sbValues[1]}), SET FirstName = ({sbValues[2]}), SET Surname = ({sbValues[3]})";
 
             var update = command.ExecuteNonQuery();
 

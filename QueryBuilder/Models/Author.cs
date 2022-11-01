@@ -23,5 +23,13 @@ namespace QueryBuilder.Models
         {
 
         }
+
+        public override string ToString()
+        {
+            return 
+                $"ID: \t\t{Id}\n" +
+                $"First Name: \t\t{FirstName}\n" +
+                $"Surname: \t\t{Surname}";
+        }
     }
 }
