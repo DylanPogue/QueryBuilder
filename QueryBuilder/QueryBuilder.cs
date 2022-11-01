@@ -53,14 +53,14 @@ namespace QueryBuilder
             return datas;
         }
 
-        public T Read<T>(int id) where T : IClassModel, new()
+        /*public T Read<T>(int id) where T : IClassModel, new()
         {
             var command = connection.CreateCommand();
             command.CommandText = $"SELECT * FROM {typeof(T).Name}";
             var reader = command.ExecuteReader();
             T data;
             
-        }
+        }*/
 
         //Create
         public void Create<T>(T obj)

@@ -5,14 +5,13 @@ var database = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Paren
 
 Console.WriteLine(database);
 
-Books a;
 List<Author> authors;
 using (var qb = new QueryBuilder.QueryBuilder(database))
 {
-    Console.WriteLine($"If you would like to create a second author hit enter...");
+    /*Console.WriteLine($"If you would like to create a second author hit enter...");
     var ids = 2;
     var sk = new Author(77, "Lucky", "Duck");
-    qb.Create<Author>(sk);
+    qb.Create<Author>(sk);*/
 
     Console.WriteLine($"Here is a list of all the current authors!");
     authors = qb.ReadAll<Author>();
