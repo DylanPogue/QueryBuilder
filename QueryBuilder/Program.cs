@@ -43,5 +43,4 @@ using (var qb = new QueryBuilder.QueryBuilder(database))
     {
         Console.WriteLine(a);
     }
-
 }
